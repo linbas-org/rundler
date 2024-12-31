@@ -1,0 +1,42 @@
+[package]
+name = "rundler-types"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[dependencies]
+rundler-contracts.workspace = true
+rundler-utils.workspace = true
+
+alloy-eips.workspace = true
+alloy-primitives.workspace = true
+alloy-sol-types.workspace = true
+
+anyhow.workspace = true
+async-trait.workspace = true
+chrono = "0.4.38"
+const-hex.workspace = true
+constcat = "0.5.0"
+futures-util.workspace = true
+metrics.workspace = true
+metrics-derive.workspace = true
+num_enum = "0.7.3"
+parse-display.workspace = true
+rand.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+strum.workspace = true
+thiserror.workspace = true
+
+mockall = { workspace = true, optional = true }
+
+[dev-dependencies]
+alloy-primitives = { workspace = true, features = ["rand"] }
+cargo-husky.workspace = true
+rundler-types = { workspace = true, features = ["test-utils"] }
+
+[features]
+test-utils = ["mockall"]
